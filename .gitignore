@@ -1,0 +1,11 @@
+# Local build output
+NineTick.exe
+NineTick.res
+NineTick - Try Me.lnk
+
+# Editor and operating-system files
+.vs/
+.vscode/
+*.user
+Thumbs.db
+Desktop.ini

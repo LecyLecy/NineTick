@@ -1,0 +1,3 @@
+#include "resource.h"
+
+IDI_NINETICK ICON "assets\\NineTick.ico"
