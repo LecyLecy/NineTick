@@ -29,7 +29,7 @@ HINSTANCE gInstance = nullptr;
 HWND gWindow = nullptr;
 NOTIFYICONDATAW gTray{};
 DWORD gStartedAt = 0;
-Position gPosition = Position::BottomLeft;
+Position gPosition = Position::BottomRight;
 wchar_t gTimeText[16] = L"00.00.00";
 
 template <size_t N>
@@ -181,8 +181,8 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE, LPSTR, int) {
     windowClass.cbSize = sizeof(windowClass); windowClass.lpfnWndProc = WindowProc; windowClass.hInstance = instance;
     windowClass.hIcon = LoadIconW(instance, MAKEINTRESOURCEW(IDI_NINETICK)); windowClass.hCursor = LoadCursorW(nullptr, IDC_ARROW); windowClass.lpszClassName = kClassName;
     if (!RegisterClassExW(&windowClass)) return 1;
-    gPosition = static_cast<Position>(RegistryGetDword(L"Position", static_cast<DWORD>(Position::BottomLeft)));
-    if (static_cast<DWORD>(gPosition) > static_cast<DWORD>(Position::BottomRight)) gPosition = Position::BottomLeft;
+    gPosition = static_cast<Position>(RegistryGetDword(L"Position", static_cast<DWORD>(Position::BottomRight)));
+    if (static_cast<DWORD>(gPosition) > static_cast<DWORD>(Position::BottomRight)) gPosition = Position::BottomRight;
     gStartedAt = GetTickCount();
     gWindow = CreateWindowExW(WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE, kClassName, kAppName, WS_POPUP, 0, 0, kOverlayWidth, kOverlayHeight, nullptr, nullptr, instance, nullptr);
     if (!gWindow) return 1;

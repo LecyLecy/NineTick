@@ -16,7 +16,7 @@ NineTick gives you a fixed, always-on-top elapsed timer with lightweight tray co
 
 NineTick is a small Win32 desktop utility for tracking elapsed time from the
 moment it starts. It begins at `00.00.00`, updates the visible value once per
-second, and continues counting upward. The overlay defaults to the lower-left
+second, and continues counting upward. The overlay defaults to the lower-right
 corner of the primary display.
 
 The application intentionally uses the Windows API directly instead of a UI
@@ -32,7 +32,7 @@ when the displayed second changes.
 
 - Starts counting immediately on launch, beginning at `00.00.00`.
 - Remains always on top and cannot be moved by dragging.
-- Starts in the lower-left corner, with top-left, top-right, and bottom-right
+- Starts in the lower-right corner, with top-left, top-right, and bottom-left
   alternatives available from the tray menu.
 - Persists the selected corner for the current Windows user.
 - Adds itself to the current user's Windows startup registry entry on first
